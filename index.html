@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpg" class="logo">
+    </header>
+
+    <nav class="menu">
+        <a href="onas.html">O NAS</a>
+        <a href="kontakt.html">KONTAKT</a>
+        <a href="faq.html">FAQ</a>
+        <a href="koszyk.html" class="link-koszyk" style="font-weight: 900;">
+            KOSZYK <span class="licznik-badge">0</span>
+        </a>
+    </nav>
+
+    <section class="hero">
+        <h2>NOWA KOLEKCJA</h2>
+        <div class="ramka-zdjecie">
+            <img src="torebka (1).jpg">
+        </div>
+    </section>
+
+    <div class="newsletter">
+        <h3>NEWSLETTER</h3>
+        <input type="email" placeholder="E-MAIL">
+    </div>
+
+    <div class="sciezka">
+        STRONA GŁÓWNA > <strong>TOREBKI</strong>
+    </div>
+
+    <section class="siatka">
+        
+        <div class="produkt" onclick="location.href='produkt.html?id=1'">
+            <div class="fotki">
+                <img src="torebka (1).jpg">
+                <img src="torebka (2).jpg" class="tyl">
+            </div>
+            <div class="opis">TOREBKA 1<br><span class="cena">499 PLN</span></div>
+        </div>
+
+        <div class="produkt" onclick="location.href='produkt.html?id=2'">
+            <div class="fotki">
+                <img src="torebka (3).jpg">
+                <img src="torebka (4).jpg" class="tyl">
+            </div>
+            <div class="opis">TOREBKA 2<br><span class="cena">599 PLN</span></div>
+        </div>
+
+        <div class="produkt" onclick="location.href='produkt.html?id=3'">
+            <div class="fotki">
+                <img src="torebka (5).jpg">
+                <img src="torebka (6).jpg" class="tyl">
+            </div>
+            <div class="opis">TOREBKA 3<br><span class="cena">299 PLN</span></div>
+        </div>
+
+        <div class="produkt" onclick="location.href='produkt.html?id=4'">
+            <div class="fotki">
+                <img src="torebka (7).jpg">
+                <img src="torebka (8).jpg" class="tyl">
+            </div>
+            <div class="opis">TOREBKA 4<br><span class="cena">349 PLN</span></div>
+        </div>
+
+        <div class="produkt" onclick="location.href='produkt.html?id=5'">
+            <div class="fotki">
+                <img src="torebka (9).jpg">
+                <img src="torebka (10).jpg" class="tyl">
+            </div>
+            <div class="opis">TOREBKA 5<br><span class="cena">399 PLN</span></div>
+        </div>
+
+        <div class="produkt" onclick="location.href='produkt.html?id=6'">
+            <div class="fotki">
+                <img src="torebka (11).jpg">
+                <img src="torebka (12).jpg" class="tyl">
+            </div>
+            <div class="opis">TOREBKA 6<br><span class="cena">450 PLN</span></div>
+        </div>
+
+    </section>
+
+    <div class="stopka">
+        GRAFIKA KOSZYKA | informacja o ochronie danych osobowych
+    </div>
+
+    <script src="skrypt.js"></script>
+</body>
+</html>

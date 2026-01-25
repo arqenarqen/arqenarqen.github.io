@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój Koszyk</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body onload="zaladujKoszyk()">
+
+    <header>
+        <img src="logo.jpg" class="logo">
+    </header>
+
+    <nav class="menu">
+        <a href="index.html">SKLEP</a>
+        <a href="onas.html">O NAS</a>
+        <a href="kontakt.html">KONTAKT</a>
+        <a href="faq.html">FAQ</a>
+        <a href="koszyk.html" class="link-koszyk aktywny">
+            KOSZYK <span class="licznik-badge">0</span>
+        </a>
+    </nav>
+
+    <div class="kontener" style="margin-top: 60px; max-width: 1000px;">
+        <h1 style="margin-bottom: 40px;">Twój Koszyk</h1>
+        
+        <div style="overflow-x: auto;">
+            <table class="tabela-nowoczesna">
+                <thead>
+                    <tr>
+                        <th colspan="2">Produkt</th>
+                        <th>Ilość</th>
+                        <th>Suma</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="koszyk-lista"></tbody>
+            </table>
+        </div>
+
+        <div id="nav-buttons" style="margin-top: 50px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <a href="index.html" class="link-prosty">&larr; Kontynuuj zakupy</a>
+            
+            <div style="text-align: right;">
+                <div style="font-size: 24px; margin-bottom: 20px;">
+                    Suma: <strong id="suma">0 PLN</strong>
+                </div>
+                <a href="zamowienie.html" class="btn-sklep">PRZEJDŹ DO KASY &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="skrypt.js"></script>
+</body>
+</html>

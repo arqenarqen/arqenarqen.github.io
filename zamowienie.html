@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Składanie zamówienia</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body onload="zaladujPodsumowanie()">
+
+    <header class="header-minimal">
+        <a href="index.html"><img src="logo.jpg" class="logo" style="height: 60px;"></a>
+        <div style="font-family: sans-serif; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Bezpieczne zakupy SSL</div>
+    </header>
+
+    <div class="kontener layout-checkout">
+        
+        <div class="sekcja-formularz">
+            <h2 style="text-align: left; margin-bottom: 30px;">Dane do wysyłki</h2>
+            
+            <form onsubmit="zlozZamowienie(event)">
+                <div class="form-row">
+                    <input type="text" name="imie" placeholder="Imię i Nazwisko" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Adres E-mail" required>
+                    <input type="tel" name="tel" placeholder="Nr telefonu" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="adres" placeholder="Ulica i numer domu" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="kod" placeholder="Kod pocztowy" style="width: 30%;" required>
+                    <input type="text" name="miasto" placeholder="Miasto" style="width: 68%;" required>
+                </div>
+
+                <h3 style="text-align: left; margin-top: 40px; font-size: 18px;">Metoda płatności</h3>
+                <div class="opcje-platnosci">
+                    <label class="radio-box">
+                        <input type="radio" name="platnosc" checked>
+                        <span>BLIK / Szybki przelew</span>
+                    </label>
+                    <label class="radio-box">
+                        <input type="radio" name="platnosc">
+                        <span>Karta płatnicza</span>
+                    </label>
+                    <label class="radio-box">
+                        <input type="radio" name="platnosc">
+                        <span>Za pobraniem (+15 PLN)</span>
+                    </label>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <label style="font-size: 12px; display: flex; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" required>
+                        <span>Akceptuję regulamin sklepu i politykę prywatności.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-sklep pelna-szerokosc" style="margin-top: 30px;">KUPUJĘ I PŁACĘ</button>
+            </form>
+        </div>
+
+        <div class="sekcja-podsumowanie">
+            <div class="box-podsumowanie">
+                <h3>TWOJE ZAMÓWIENIE</h3>
+                <ul id="lista-skrocona" class="lista-checklista"></ul>
+                <div class="total-row">
+                    <span>RAZEM:</span>
+                    <strong id="total-do-zaplaty">0 PLN</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="skrypt.js"></script>
+</body>
+</html>

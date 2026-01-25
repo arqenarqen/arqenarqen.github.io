@@ -1,0 +1,526 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', serif;
+    background-color: #f5f0e6;
+    color: #000;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    max-height: 80px;
+    display: block;
+    margin: 0 auto;
+}
+
+.menu {
+    background: #e3d5b8;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #000;
+}
+
+.menu a {
+    padding: 15px 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-right: 1px solid #000;
+    color: #000;
+}
+
+.menu a:last-child {
+    border: none;
+}
+
+.menu a:hover {
+    background: #d1c09f;
+}
+
+.powrot {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.kontener {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.ramka-zdjecie {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px;
+    border: 1px dashed #000;
+    background: #fff;
+}
+
+.ramka-zdjecie img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.newsletter {
+    background: #000;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 300px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sciezka {
+    background: #e3d5b8;
+    padding: 10px 20px;
+    font-family: sans-serif;
+    font-size: 14px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.siatka {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 50px;
+}
+
+.produkt {
+    text-align: center;
+    cursor: pointer;
+}
+
+.fotki {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.fotki img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+.tyl {
+    opacity: 0;
+}
+
+.fotki:hover .tyl {
+    opacity: 1;
+}
+
+.cena {
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
+
+.opis {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.faq-btn {
+    border: 1px solid #000;
+    padding: 15px 30px;
+    background: transparent;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.faq-btn:hover {
+    background: #e3d5b8;
+}
+
+.linia-pionowa {
+    background: #000;
+    width: 2px;
+}
+
+.flex-kontakt {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 0;
+    align-items: center;
+}
+
+.ikona {
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.wiersz {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-family: sans-serif;
+}
+
+.stopka {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    opacity: 0.6;
+    font-family: sans-serif;
+}
+
+@media(max-width: 768px) {
+    .menu { flex-direction: column; }
+    .flex-kontakt { flex-direction: column; text-align: center; }
+    .linia-pionowa { display: none; }
+}
+
+.produkt-detale {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.produkt-info {
+    text-align: left;
+    padding: 20px;
+}
+
+.btn-sklep {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-sklep:hover {
+    background: #444;
+}
+
+.tabela-koszyk {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin-top: 20px;
+}
+
+.tabela-koszyk th, .tabela-koszyk td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabela-koszyk th {
+    background: #e3d5b8;
+}
+
+.tabela-koszyk button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+@media(max-width: 768px) {
+    .produkt-detale { grid-template-columns: 1fr; }
+}
+
+.link-koszyk {
+    position: relative;
+    padding-right: 40px !important;
+}
+
+.licznik-badge {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: #b22222;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.layout-produkt {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+.galeria-kontener img {
+    width: 100%;
+    display: block;
+}
+
+.glowne-foto {
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.miniatury-pasek {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.miniatury-pasek img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.2s;
+    border: 1px solid #ddd;
+}
+
+.miniatury-pasek img:hover {
+    opacity: 1;
+    border-color: #000;
+}
+
+.link-powrot {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.link-powrot:hover {
+    color: #000;
+    transform: translateX(-5px);
+}
+
+.btn-sklep {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 16px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.btn-sklep:hover {
+    background: #333;
+}
+
+.pelna-szerokosc {
+    width: 100%;
+}
+
+.tabela-nowoczesna {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    margin-top: 20px;
+}
+
+.tabela-nowoczesna th {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #888;
+    border-bottom: 2px solid #eee;
+    padding: 15px;
+    text-align: center;
+}
+
+.tabela-nowoczesna td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.stepper {
+    display: inline-flex;
+    border: 1px solid #ddd;
+    align-items: center;
+}
+
+.stepper button {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.stepper button:hover {
+    background: #f5f5f5;
+}
+
+.stepper span {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.btn-usun {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-usun:hover {
+    color: red;
+}
+
+.header-minimal {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.layout-checkout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.sekcja-formularz input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    font-family: sans-serif;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.form-row {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.opcje-platnosci {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.radio-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.radio-box:hover {
+    border-color: #000;
+}
+
+.box-podsumowanie {
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    position: sticky;
+    top: 20px;
+}
+
+.lista-checklista {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.lista-checklista li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    border-bottom: 1px dashed #eee;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+@media(max-width: 900px) {
+    .layout-produkt, .layout-checkout {
+        grid-template-columns: 1fr;
+    }
+    .box-podsumowanie {
+        position: static;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sklep</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body onload="zaladujProdukt()">
+
+    <header>
+        <img src="logo.jpg" class="logo">
+    </header>
+
+    <nav class="menu">
+        <a href="index.html">SKLEP</a>
+        <a href="onas.html">O NAS</a>
+        <a href="kontakt.html">KONTAKT</a>
+        <a href="faq.html">FAQ</a>
+        <a href="koszyk.html" class="link-koszyk">
+            KOSZYK <span class="licznik-badge">0</span>
+        </a>
+    </nav>
+
+    <div class="kontener" style="margin-top: 40px; margin-bottom: 80px;">
+        <a href="index.html" class="link-powrot">
+            <span>&#8592;</span> Wróć do przeglądania
+        </a>
+        
+        <div class="layout-produkt">
+            <div class="galeria-kontener">
+                <div class="glowne-foto">
+                    <img id="img-glowny" src="" alt="Produkt">
+                </div>
+                <div id="miniatury" class="miniatury-pasek"></div>
+            </div>
+
+            <div class="info-kontener">
+                <h1 id="nazwa" style="text-align: left; margin-top: 0;"></h1>
+                <h2 id="cena" style="text-align: left; color: #555; margin-bottom: 30px;"></h2>
+                <p id="opis" style="line-height: 1.8; color: #333; margin-bottom: 40px;"></p>
+                
+                <div style="border-top: 1px solid #ddd; padding-top: 30px;">
+                    <button id="btn-dodaj" class="btn-sklep pelna-szerokosc">DODAJ DO KOSZYKA</button>
+                    <div style="margin-top: 20px; font-size: 13px; color: #777; display: flex; gap: 20px;">
+                        <span>&#10003; Wysyłka w 24h</span>
+                        <span>&#10003; Darmowy zwrot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stopka">
+        GRAFIKA KOSZYKA | informacja o ochronie danych
+    </div>
+
+    <script src="skrypt.js"></script>
+</body>
+</html>
