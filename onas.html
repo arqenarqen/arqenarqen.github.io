@@ -2,37 +2,133 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>O Nas</title>
+    <title>O Nas – ARQEN</title>
     <link rel="stylesheet" href="styl.css">
+    <style>
+        /* Wygląd rozwijanych sekcji */
+        .section {
+            max-width: 700px;
+            margin: 30px auto;
+            text-align: left;
+        }
+        .section-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border: 1px solid #ccc;
+            background-color: inherit;
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .section-header span {
+            transition: transform 0.3s ease;
+        }
+        .section-header.active span {
+            transform: rotate(90deg);
+        }
+
+        /* Opinie */
+        .opinie-box {
+            background-color: #f8f8f8;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        .kontener {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* Wygląd logo i powrotu */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: transparent;
+        }
+        .powrot {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            color: black;
+        }
+        .logo {
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
 
-    <header style="background: transparent;">
-        <a href="index.html" class="powrot" style="color: black;">&#11013; Powrót</a>
-        <img src="logo.jpg" class="logo">
-    </header>
+<header>
+    <a href="index.html" class="powrot">&#11013; Powrót</a>
+    <img src="logo.jpg" class="logo" alt="ARQEN Logo">
+</header>
 
-    <div class="kontener" style="text-align: center; margin-top: 40px;">
-        <h1 style="font-size: 50px;">O NAS</h1>
-        <p>kilka zdań o firmie</p>
+<div class="kontener">
+    <h1>O NAS</h1>
+    <p>Marka ARQEN powstała z pasji do eleganckich, ponadczasowych torebek z włoskich skór premium. Nasze produkty łączą minimalizm i funkcjonalność.</p>
 
-        <div style="margin: 60px 0; border-top: 2px solid black; padding-top: 40px;">
-            <h3>GENEZA</h3>
-            <p>opis jak powstała marka</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 2px 1fr; gap: 40px;">
-            <div>
-                <h3>KARIERA</h3>
-                <p>informacje o pracy</p>
-            </div>
-            <div class="linia-pionowa"></div>
-            <div>
-                <h3>OPINIE</h3>
-                <p>komentarze klientów</p>
-            </div>
+    <!-- GENEZA -->
+    <div class="section">
+        <div class="section-header">GENEZA <span>&#10148;</span></div>
+        <div class="section-content">
+            <p>ARQEN powstało w odpowiedzi na potrzebę tworzenia eleganckich, trwałych i funkcjonalnych torebek. Inspiracją były włoskie skóry premium oraz ponadczasowy design. Każdy model projektowany jest z myślą o codziennym użytkowaniu oraz wyjątkowych okazjach.</p>
         </div>
     </div>
+
+    <!-- KARIERA -->
+    <div class="section">
+        <div class="section-header">KARIERA <span>&#10148;</span></div>
+        <div class="section-content">
+            <p>Dołącz do naszego zespołu! Szukamy kreatywnych osób, które chcą tworzyć produkty najwyższej jakości, od projektowania po realizację. Oferujemy inspirujące środowisko pracy i możliwość rozwoju w branży modowej.</p>
+        </div>
+    </div>
+
+    <!-- OPINIE -->
+    <div class="section">
+        <div class="section-header">OPINIE <span>&#10148;</span></div>
+        <div class="section-content">
+            <div class="opinie-box"><strong>Anna K.:</strong> „Torebka ARQEN jest przepiękna, elegancka i bardzo solidna. Najlepsza inwestycja w mojej garderobie!”</div>
+            <div class="opinie-box"><strong>Mateusz P.:</strong> „Idealny prezent dla żony – jakość materiałów i wykonania powala. Gorąco polecam.”</div>
+            <div class="opinie-box"><strong>Julia S.:</strong> „Minimalistyczny design i wygoda użytkowania – wszystko w jednym. Uwielbiam moje nowe torebki ARQEN!”</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Rozwijane sekcje
+    document.querySelectorAll(".section-header").forEach(header => {
+        header.addEventListener("click", () => {
+            const content = header.nextElementSibling;
+            header.classList.toggle("active");
+            if(content.style.maxHeight){
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
