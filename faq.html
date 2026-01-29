@@ -1,43 +1,236 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>FAQ</title>
-    <link rel="stylesheet" href="styl.css">
+<meta charset="UTF-8">
+<title>FAQ – ARQEN</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #111;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+header .logo {
+    height: 50px;
+    filter: invert(1);
+}
+
+header .powrot {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+header .powrot:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* CONTAINER */
+.kontener {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    font-style: italic;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* FAQ BUTTONS */
+.faq-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.faq-btn {
+    padding: 15px;
+    border: 1px solid #000;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.faq-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* SEKCJE TEMATY */
+.section {
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.section-header {
+    padding: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header span {
+    transition: transform 0.3s;
+}
+
+.section.active .section-header span {
+    transform: rotate(90deg);
+}
+
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 18px;
+}
+
+.section.active .section-content {
+    max-height: 500px;
+    padding-bottom: 18px;
+}
+
+.section-content p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <a href="index.html" class="powrot">&#11013;</a>
-        <img src="logo.jpg" class="logo" style="filter: invert(1);">
-    </header>
+<header>
+    <img src="logo.jpg" alt="ARQEN Logo" class="logo">
+    <a href="index.html" class="powrot">&#11013; Strona główna</a>
+</header>
 
-    <div class="kontener" style="margin-top: 40px; text-align: center;">
-        <h2 style="font-style: italic; font-size: 40px; text-transform: none;">Sugerowane pytania</h2>
-        
-        <div style="margin-bottom: 30px;">
-            <button class="faq-btn">PYTANIE 1</button>
-            <button class="faq-btn">PYTANIE 2</button>
-            <button class="faq-btn">PYTANIE 3</button>
-        </div>
-        <div>
-             <button class="faq-btn">PYTANIE 4</button>
-             <button class="faq-btn">PYTANIE 5</button>
-        </div>
+<div class="kontener">
 
-        <div style="max-width: 600px; margin: 60px auto 0; text-align: left;">
-            <h3>TEMATY</h3>
-            <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
-                TEMAT 1 <span>&#10148;</span>
-            </div>
-            <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
-                TEMAT 2 <span>&#10148;</span>
-            </div>
-            <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
-                TEMAT 3 <span>&#10148;</span>
-            </div>
+    <h2>Sugerowane pytania</h2>
+
+    <div class="faq-buttons">
+        <button class="faq-btn" data-id="1">PYTANIE 1</button>
+        <button class="faq-btn" data-id="2">PYTANIE 2</button>
+        <button class="faq-btn" data-id="3">PYTANIE 3</button>
+        <button class="faq-btn" data-id="4">PYTANIE 4</button>
+        <button class="faq-btn" data-id="5">PYTANIE 5</button>
+    </div>
+
+    <!-- ODPOWIEDŹ -->
+    <div id="faq-box" style="background:#fff;border:1px solid #ccc;padding:20px;margin-bottom:50px;overflow:hidden;max-height:0;transition:max-height 0.4s ease;">
+        <h3 id="faq-question"></h3>
+        <p id="faq-answer"></p>
+    </div>
+
+    <h3>TEMATY</h3>
+
+    <!-- TEMAT 1 -->
+    <div class="section">
+        <div class="section-header">
+            TEMAT 1 – Produkty
+            <span>&#10148;</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Jakie modele są dostępne?</strong><br>
+            Oferta ARQEN obejmuje klasyczne modele torebek zaprojektowane z myślą o codziennym użytkowaniu oraz wyjątkowych okazjach.</p>
+            <p><strong>Czy produkty różnią się kolorystyką?</strong><br>
+            Wybrane modele dostępne są w różnych wariantach kolorystycznych, zgodnych z estetyką marki.</p>
         </div>
     </div>
+
+    <!-- TEMAT 2 -->
+    <div class="section">
+        <div class="section-header">
+            TEMAT 2 – Zamówienia i dostawa
+            <span>&#10148;</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Jak długo trwa realizacja zamówienia?</strong><br>
+            Czas realizacji zamówienia wynosi od 2 do 5 dni roboczych.</p>
+            <p><strong>Jakie są metody dostawy?</strong><br>
+            Dostawa realizowana jest za pośrednictwem firm kurierskich. Szczegóły dostępne są na etapie składania zamówienia.</p>
+        </div>
+    </div>
+
+    <!-- TEMAT 3 -->
+    <div class="section">
+        <div class="section-header">
+            TEMAT 3 – Zwroty i reklamacje
+            <span>&#10148;</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Jak dokonać zwrotu?</strong><br>
+            Aby dokonać zwrotu, należy skontaktować się z obsługą klienta i postępować zgodnie z otrzymanymi instrukcjami.</p>
+            <p><strong>Czy mogę zgłosić reklamację?</strong><br>
+            Tak, w przypadku wady produktu istnieje możliwość złożenia reklamacji zgodnie z obowiązującymi zasadami.</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+const faqData = {
+    1: {q:"Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?", a:"Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design."},
+    2: {q:"Pytanie 2: Gdzie projektowane są torebki ARQEN?", a:"Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność."},
+    3: {q:"Pytanie 3: Jaki jest czas realizacji zamówienia?", a:"Standardowy czas realizacji zamówienia wynosi od 2 do 5 dni roboczych. Do czasu realizacji należy doliczyć czas dostawy wybrany podczas składania zamówienia."},
+    4: {q:"Pytanie 4: Czy mogę zwrócić lub wymienić zamówienie?", a:"Tak, istnieje możliwość zwrotu lub wymiany produktu w ciągu 14 dni od otrzymania zamówienia, pod warunkiem że produkt nie nosi śladów użytkowania."},
+    5: {q:"Pytanie 5: Jak dbać o torebkę ARQEN?", a:"Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu, unikanie kontaktu z wilgocią oraz regularne czyszczenie miękką, suchą ściereczką."}
+};
+
+const buttons = document.querySelectorAll(".faq-btn");
+const box = document.getElementById("faq-box");
+const question = document.getElementById("faq-question");
+const answer = document.getElementById("faq-answer");
+
+let activeId = null;
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", function(){
+        const id = btn.dataset.id;
+        if(activeId===id){
+            box.style.maxHeight="0";
+            activeId=null;
+        } else {
+            question.textContent = faqData[id].q;
+            answer.textContent = faqData[id].a;
+            box.style.maxHeight="500px";
+            activeId=id;
+        }
+    });
+});
+
+// Sekcje TEMATY rozwijane
+document.querySelectorAll(".section-header").forEach(header => {
+    header.addEventListener("click", ()=>{
+        const section = header.parentElement;
+        section.classList.toggle("active");
+    });
+});
+</script>
 
 </body>
 </html>
