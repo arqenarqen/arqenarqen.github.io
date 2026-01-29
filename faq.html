@@ -4,176 +4,40 @@
 <meta charset="UTF-8">
 <title>FAQ – ARQEN</title>
 <link rel="stylesheet" href="styl.css">
-
-<style>
-/* BODY */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #111;
-}
-
-/* HEADER: logo po lewej, powrotu po prawej */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-}
-
-header .logo {
-    height: 50px;
-    filter: invert(1);
-}
-
-header .powrot {
-    font-size: 20px;
-    text-decoration: none;
-    color: #000;
-    padding: 10px 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-
-header .powrot:hover {
-    background: #000;
-    color: #fff;
-}
-
-/* KONTAINER */
-.kontener {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-h2 {
-    font-style: italic;
-    font-size: 40px;
-    margin-bottom: 40px;
-}
-
-/* FAQ BUTTONS */
-.faq-buttons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.faq-btn {
-    padding: 15px;
-    border: 1px solid #000;
-    background: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-}
-
-.faq-btn:hover {
-    background: #000;
-    color: #fff;
-}
-
-/* ODPOWIEDZI FAQ */
-#faq-box {
-    background: #fff;
-    border: 1px solid #ccc;
-    margin: 20px auto 50px;
-    padding: 0 20px;
-    max-width: 700px;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    text-align: left;
-}
-
-#faq-box.active {
-    max-height: 500px;
-    padding: 20px;
-}
-
-/* TEMATY sekcje rozwijane */
-.section {
-    border: 1px solid #ccc;
-    background: #fff;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.section-header {
-    padding: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.section-header span {
-    transition: transform 0.3s;
-}
-
-.section.active .section-header span {
-    transform: rotate(90deg);
-}
-
-.section-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    padding: 0 18px;
-}
-
-.section.active .section-content {
-    max-height: 500px;
-    padding-bottom: 18px;
-}
-
-.section-content p {
-    margin: 10px 0;
-    line-height: 1.6;
-}
-</style>
 </head>
-
 <body>
 
 <header>
+    <a href="index.html" class="powrot">&#11013;</a>
     <img src="logo.jpg" class="logo" alt="ARQEN Logo">
-    <a href="index.html" class="powrot">&#11013; Strona główna</a>
 </header>
 
 <div class="kontener">
-
     <h2>Sugerowane pytania</h2>
 
-    <div class="faq-buttons">
+    <!-- PRZYCISKI FAQ -->
+    <div style="margin-bottom:30px;">
         <button class="faq-btn" data-id="1">PYTANIE 1</button>
         <button class="faq-btn" data-id="2">PYTANIE 2</button>
         <button class="faq-btn" data-id="3">PYTANIE 3</button>
+    </div>
+    <div>
         <button class="faq-btn" data-id="4">PYTANIE 4</button>
         <button class="faq-btn" data-id="5">PYTANIE 5</button>
     </div>
 
     <!-- ODPOWIEDŹ FAQ -->
-    <div id="faq-box">
+    <div id="faq-box" style="overflow:hidden; max-height:0; transition:max-height 0.4s ease; margin-top:20px; border:1px solid #ccc; padding:0 15px; background:#fff;">
         <h3 id="faq-question"></h3>
         <p id="faq-answer"></p>
     </div>
 
-    <h3>TEMATY</h3>
+    <h3 style="margin-top:50px;">TEMATY</h3>
 
     <!-- TEMAT 1 -->
     <div class="section">
-        <div class="section-header">
-            TEMAT 1 – Produkty
-            <span>&#10148;</span>
-        </div>
-        <div class="section-content">
+        <div class="section-header">TEMAT 1 – Produkty <span>&#10148;</span></div>
+        <div class="section-content" style="overflow:hidden; max-height:0; transition:max-height 0.4s ease; padding:0 15px;">
             <p><strong>Jakie modele są dostępne?</strong><br>
             Oferta ARQEN obejmuje klasyczne modele torebek zaprojektowane z myślą o codziennym użytkowaniu oraz wyjątkowych okazjach.</p>
             <p><strong>Czy produkty różnią się kolorystyką?</strong><br>
@@ -183,11 +47,8 @@ h2 {
 
     <!-- TEMAT 2 -->
     <div class="section">
-        <div class="section-header">
-            TEMAT 2 – Zamówienia i dostawa
-            <span>&#10148;</span>
-        </div>
-        <div class="section-content">
+        <div class="section-header">TEMAT 2 – Zamówienia i dostawa <span>&#10148;</span></div>
+        <div class="section-content" style="overflow:hidden; max-height:0; transition:max-height 0.4s ease; padding:0 15px;">
             <p><strong>Jak długo trwa realizacja zamówienia?</strong><br>
             Czas realizacji zamówienia wynosi od 2 do 5 dni roboczych.</p>
             <p><strong>Jakie są metody dostawy?</strong><br>
@@ -197,11 +58,8 @@ h2 {
 
     <!-- TEMAT 3 -->
     <div class="section">
-        <div class="section-header">
-            TEMAT 3 – Zwroty i reklamacje
-            <span>&#10148;</span>
-        </div>
-        <div class="section-content">
+        <div class="section-header">TEMAT 3 – Zwroty i reklamacje <span>&#10148;</span></div>
+        <div class="section-content" style="overflow:hidden; max-height:0; transition:max-height 0.4s ease; padding:0 15px;">
             <p><strong>Jak dokonać zwrotu?</strong><br>
             Aby dokonać zwrotu, należy skontaktować się z obsługą klienta i postępować zgodnie z instrukcjami.</p>
             <p><strong>Czy mogę zgłosić reklamację?</strong><br>
@@ -212,7 +70,7 @@ h2 {
 </div>
 
 <script>
-// Dane FAQ
+// DANE FAQ
 const faqData = {
     1: {q:"Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?", a:"Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design."},
     2: {q:"Pytanie 2: Gdzie projektowane są torebki ARQEN?", a:"Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność."},
@@ -229,15 +87,15 @@ const answer = document.getElementById("faq-answer");
 let activeId = null;
 
 buttons.forEach(btn=>{
-    btn.addEventListener("click", function(){
+    btn.addEventListener("click", ()=>{
         const id = btn.dataset.id;
         if(activeId===id){
-            box.classList.remove("active");
+            box.style.maxHeight="0";
             activeId=null;
         } else {
             question.textContent = faqData[id].q;
             answer.textContent = faqData[id].a;
-            box.classList.add("active");
+            box.style.maxHeight = "400px";
             activeId=id;
         }
     });
@@ -246,7 +104,14 @@ buttons.forEach(btn=>{
 // TEMATY rozwijane
 document.querySelectorAll(".section-header").forEach(header=>{
     header.addEventListener("click", ()=>{
-        header.parentElement.classList.toggle("active");
+        const section = header.parentElement;
+        const content = section.querySelector(".section-content");
+        section.classList.toggle("active");
+        if(section.classList.contains("active")){
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            content.style.maxHeight = "0";
+        }
     });
 });
 </script>
