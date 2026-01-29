@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>FAQ – ARQEN</title>
+<link rel="stylesheet" href="styl.css">
 
 <style>
+/* zachowujemy wygląd reszty strony */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -12,18 +14,17 @@ body {
     color: #111;
 }
 
-/* HEADER */
+/* HEADER: logo po lewej, przycisk powrotu po prawej */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: #fff;
-    border-bottom: 1px solid #ccc;
 }
 
 header .logo {
     height: 50px;
+    /* pozostawiamy filter taki jak w stylu oryginalnym */
     filter: invert(1);
 }
 
@@ -42,15 +43,15 @@ header .powrot:hover {
     color: #fff;
 }
 
-/* CONTAINER */
+/* KONTAINER */
 .kontener {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
+    text-align: center;
 }
 
 h2 {
-    text-align: center;
     font-style: italic;
     font-size: 40px;
     margin-bottom: 40px;
@@ -61,7 +62,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 15px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .faq-btn {
@@ -78,11 +79,30 @@ h2 {
     color: #fff;
 }
 
-/* SEKCJE TEMATY */
+/* ODPOWIEDZI FAQ */
+#faq-box {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin: 20px auto 50px;
+    padding: 0 20px;
+    max-width: 700px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    text-align: left;
+}
+
+#faq-box.active {
+    max-height: 500px;
+    padding: 20px;
+}
+
+/* TEMATY sekcje rozwijane */
 .section {
     border: 1px solid #ccc;
     background: #fff;
     margin-bottom: 15px;
+    text-align: left;
 }
 
 .section-header {
@@ -124,7 +144,7 @@ h2 {
 <body>
 
 <header>
-    <img src="logo.jpg" alt="ARQEN Logo" class="logo">
+    <img src="logo.jpg" class="logo" alt="ARQEN Logo">
     <a href="index.html" class="powrot">&#11013; Strona główna</a>
 </header>
 
@@ -140,8 +160,8 @@ h2 {
         <button class="faq-btn" data-id="5">PYTANIE 5</button>
     </div>
 
-    <!-- ODPOWIEDŹ -->
-    <div id="faq-box" style="background:#fff;border:1px solid #ccc;padding:20px;margin-bottom:50px;overflow:hidden;max-height:0;transition:max-height 0.4s ease;">
+    <!-- ODPOWIEDŹ FAQ -->
+    <div id="faq-box">
         <h3 id="faq-question"></h3>
         <p id="faq-answer"></p>
     </div>
@@ -184,7 +204,7 @@ h2 {
         </div>
         <div class="section-content">
             <p><strong>Jak dokonać zwrotu?</strong><br>
-            Aby dokonać zwrotu, należy skontaktować się z obsługą klienta i postępować zgodnie z otrzymanymi instrukcjami.</p>
+            Aby dokonać zwrotu, należy skontaktować się z obsługą klienta i postępować zgodnie z instrukcjami.</p>
             <p><strong>Czy mogę zgłosić reklamację?</strong><br>
             Tak, w przypadku wady produktu istnieje możliwość złożenia reklamacji zgodnie z obowiązującymi zasadami.</p>
         </div>
@@ -193,6 +213,7 @@ h2 {
 </div>
 
 <script>
+// Dane FAQ
 const faqData = {
     1: {q:"Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?", a:"Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design."},
     2: {q:"Pytanie 2: Gdzie projektowane są torebki ARQEN?", a:"Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność."},
@@ -205,29 +226,27 @@ const buttons = document.querySelectorAll(".faq-btn");
 const box = document.getElementById("faq-box");
 const question = document.getElementById("faq-question");
 const answer = document.getElementById("faq-answer");
-
 let activeId = null;
 
-buttons.forEach(btn => {
+buttons.forEach(btn=>{
     btn.addEventListener("click", function(){
         const id = btn.dataset.id;
         if(activeId===id){
-            box.style.maxHeight="0";
+            box.classList.remove("active");
             activeId=null;
         } else {
             question.textContent = faqData[id].q;
             answer.textContent = faqData[id].a;
-            box.style.maxHeight="500px";
+            box.classList.add("active");
             activeId=id;
         }
     });
 });
 
-// Sekcje TEMATY rozwijane
-document.querySelectorAll(".section-header").forEach(header => {
+// TEMATY rozwijane
+document.querySelectorAll(".section-header").forEach(header=>{
     header.addEventListener("click", ()=>{
-        const section = header.parentElement;
-        section.classList.toggle("active");
+        header.parentElement.classList.toggle("active");
     });
 });
 </script>
