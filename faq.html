@@ -16,25 +16,22 @@
 
     <h2>Sugerowane pytania</h2>
 
-    <div style="margin-bottom: 30px;">
+    <div class="faq-buttons">
         <button class="faq-btn" data-id="1">PYTANIE 1</button>
         <button class="faq-btn" data-id="2">PYTANIE 2</button>
         <button class="faq-btn" data-id="3">PYTANIE 3</button>
-    </div>
-    <div>
         <button class="faq-btn" data-id="4">PYTANIE 4</button>
         <button class="faq-btn" data-id="5">PYTANIE 5</button>
     </div>
 
-    <!-- ODPOWIEDZI FAQ -->
+    <!-- Kontener odpowiedzi -->
     <div id="faq-box" class="faq-box">
         <h3 id="faq-question"></h3>
         <p id="faq-answer"></p>
     </div>
 
-    <h3 style="margin-top:50px;">TEMATY</h3>
+    <h3>TEMATY</h3>
 
-    <!-- TEMAT 1 -->
     <div class="section">
         <div class="section-header">TEMAT 1 – Produkty <span>&#10148;</span></div>
         <div class="section-content">
@@ -46,7 +43,6 @@
         </div>
     </div>
 
-    <!-- TEMAT 2 -->
     <div class="section">
         <div class="section-header">TEMAT 2 – Zamówienia i dostawa <span>&#10148;</span></div>
         <div class="section-content">
@@ -58,7 +54,6 @@
         </div>
     </div>
 
-    <!-- TEMAT 3 -->
     <div class="section">
         <div class="section-header">TEMAT 3 – Zwroty i reklamacje <span>&#10148;</span></div>
         <div class="section-content">
@@ -98,12 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 question.textContent = faqData[id].q;
                 answer.textContent = faqData[id].a;
-                box.style.maxHeight = "300px";
+                box.style.maxHeight = box.scrollHeight + "px";
                 activeId = id;
             }
         });
     });
 
+    // Rozwijane sekcje TEMATY
     document.querySelectorAll(".section-header").forEach(header => {
         header.addEventListener("click", () => {
             const content = header.nextElementSibling;
