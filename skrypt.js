@@ -1,10 +1,10 @@
 const produkty = [
-    { id: 1, nazwa: "TOREBKA 1", cena: 499, imgs: ["torebka (1).jpg", "torebka (2).jpg"], opis: "Klasyczna elegancja w każdym calu. Idealna na wieczorne wyjścia." },
-    { id: 2, nazwa: "TOREBKA 2", cena: 599, imgs: ["torebka (3).jpg", "torebka (4).jpg"], opis: "Pojemna i stylowa. Wykonana z najwyższej jakości materiałów." },
-    { id: 3, nazwa: "TOREBKA 3", cena: 299, imgs: ["torebka (5).jpg", "torebka (6).jpg"], opis: "Lekka, miejska torebka na co dzień. Pasuje do jeansów i sukienek." },
-    { id: 4, nazwa: "TOREBKA 4", cena: 349, imgs: ["torebka (7).jpg", "torebka (8).jpg"], opis: "Nowoczesny design z nutą retro. Unikalny dodatek do Twojej szafy." },
-    { id: 5, nazwa: "TOREBKA 5", cena: 399, imgs: ["torebka (9).jpg", "torebka (10).jpg"], opis: "Minimalizm w czystej postaci. Dyskretne logo i solidne zamki." },
-    { id: 6, nazwa: "TOREBKA 6", cena: 450, imgs: ["torebka (11).jpg", "torebka (12).jpg"], opis: "Odważny krój dla pewnych siebie kobiet. Wyróżnij się z tłumu." }
+    { id: 1, nazwa: "ARQEN Lunar Gold", cena: 499, imgs: ["torebka (1).jpg", "torebka (2).jpg"], opis: "Klasyczna elegancja w każdym calu. Idealna na wieczorne wyjścia." },
+    { id: 2, nazwa: "ARQEN Aura", cena: 599, imgs: ["torebka (3).jpg", "torebka (4).jpg"], opis: "Pojemna i stylowa. Wykonana z najwyższej jakości materiałów." },
+    { id: 3, nazwa: "ARQEN Noir Bijou", cena: 299, imgs: ["torebka (5).jpg", "torebka (6).jpg"], opis: "Lekka, miejska torebka na co dzień. Pasuje do jeansów i sukienek." },
+    { id: 4, nazwa: "Atelier Chevron", cena: 349, imgs: ["torebka (7).jpg", "torebka (8).jpg"], opis: "Nowoczesny design z nutą retro. Unikalny dodatek do Twojej szafy." },
+    { id: 5, nazwa: "Elysian Top-Handle", cena: 399, imgs: ["torebka (9).jpg", "torebka (10).jpg"], opis: "Minimalizm w czystej postaci. Dyskretne logo i solidne zamki." },
+    { id: 6, nazwa: "Riviera Silk Tote", cena: 450, imgs: ["torebka (11).jpg", "torebka (12).jpg"], opis: "Odważny krój dla pewnych siebie kobiet. Wyróżnij się z tłumu." }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -164,4 +164,5 @@ function zlozZamowienie(event) {
     
     localStorage.removeItem('koszyk');
     aktualizujLicznikMenu();
+
 }
