@@ -1,115 +1,104 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>FAQ – ARQEN</title>
+<meta charset="UTF-8">
+<title>FAQ – ARQEN</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-        }
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
 
-        .kontener {
-            max-width: 700px;
-            margin: 50px auto;
-            text-align: center;
-        }
+.kontener {
+    max-width: 700px;
+    margin: 50px auto;
+}
 
-        .faq-btn {
-            padding: 12px 20px;
-            margin: 8px;
-            cursor: pointer;
-            border: 1px solid #000;
-            background: #fff;
-            font-weight: bold;
-        }
+.faq-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
 
-        .faq-content {
-            background: #fff;
-            border: 1px solid #ccc;
-            margin-top: 30px;
-            padding: 0 20px;
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.5s ease, padding 0.3s ease;
-            text-align: left;
-        }
+.faq-question {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-        .faq-content.active {
-            max-height: 400px;
-            padding: 20px;
-        }
+.faq-answer {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
 
-        .faq-question {
-            margin-bottom: 10px;
-        }
-    </style>
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 15px;
+}
+</style>
 </head>
+
 <body>
 
 <div class="kontener">
-    <h2>Sugerowane pytania</h2>
 
-    <button class="faq-btn" data-id="1">PYTANIE 1</button>
-    <button class="faq-btn" data-id="2">PYTANIE 2</button>
-    <button class="faq-btn" data-id="3">PYTANIE 3</button>
-    <button class="faq-btn" data-id="4">PYTANIE 4</button>
-    <button class="faq-btn" data-id="5">PYTANIE 5</button>
-
-    <div id="faq-content" class="faq-content">
-        <h3 id="faq-question"></h3>
-        <p><strong>Odpowiedź:</strong></p>
-        <p id="faq-answer"></p>
+    <div class="faq-item">
+        <div class="faq-question">
+            Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?
+        </div>
+        <div class="faq-answer">
+            Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design.
+        </div>
     </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Pytanie 2: Gdzie projektowane są torebki ARQEN?
+        </div>
+        <div class="faq-answer">
+            Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Pytanie 3: Jaki jest czas realizacji zamówienia?
+        </div>
+        <div class="faq-answer">
+            Standardowy czas realizacji zamówienia wynosi od 2 do 5 dni roboczych. Do czasu realizacji należy doliczyć czas dostawy wybrany podczas składania zamówienia.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Pytanie 4: Czy mogę zwrócić lub wymienić zamówienie?
+        </div>
+        <div class="faq-answer">
+            Tak, istnieje możliwość zwrotu lub wymiany produktu w ciągu 14 dni od otrzymania zamówienia, pod warunkiem że produkt nie nosi śladów użytkowania.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Pytanie 5: Jak dbać o torebkę ARQEN?
+        </div>
+        <div class="faq-answer">
+            Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu, unikanie kontaktu z wilgocią oraz regularne czyszczenie miękką, suchą ściereczką.
+        </div>
+    </div>
+
 </div>
 
 <script>
-    const faqData = {
-        1: {
-            question: "Z jakich materiałów wykonane są torebki ARQEN?",
-            answer: "Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design."
-        },
-        2: {
-            question: "Gdzie projektowane są torebki ARQEN?",
-            answer: "Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność."
-        },
-        3: {
-            question: "Jaki jest czas realizacji zamówienia?",
-            answer: "Standardowy czas realizacji zamówienia wynosi od 2 do 5 dni roboczych. Do czasu realizacji należy doliczyć czas dostawy wybrany podczas składania zamówienia."
-        },
-        4: {
-            question: "Czy mogę zwrócić lub wymienić zamówienie?",
-            answer: "Tak, istnieje możliwość zwrotu lub wymiany produktu w ciągu 14 dni od otrzymania zamówienia, pod warunkiem że produkt nie nosi śladów użytkowania."
-        },
-        5: {
-            question: "Jak dbać o torebkę ARQEN?",
-            answer: "Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu, unikanie kontaktu z wilgocią oraz regularne czyszczenie miękką, suchą ściereczką."
-        }
-    };
-
-    const buttons = document.querySelectorAll(".faq-btn");
-    const content = document.getElementById("faq-content");
-    const question = document.getElementById("faq-question");
-    const answer = document.getElementById("faq-answer");
-
-    let activeId = null;
-
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const id = btn.dataset.id;
-
-            if (activeId === id) {
-                content.classList.remove("active");
-                activeId = null;
-            } else {
-                question.textContent = "Pytanie " + id + ": " + faqData[id].question;
-                answer.textContent = faqData[id].answer;
-                content.classList.add("active");
-                activeId = id;
-            }
-        });
+document.querySelectorAll(".faq-question").forEach(question => {
+    question.addEventListener("click", () => {
+        const item = question.parentElement;
+        item.classList.toggle("active");
     });
+});
 </script>
 
 </body>
