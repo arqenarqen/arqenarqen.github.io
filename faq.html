@@ -1,105 +1,91 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-<meta charset="UTF-8">
-<title>FAQ – ARQEN</title>
+<div class="faq-container">
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?
+    </div>
+    <div class="faq-answer">
+      Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Pytanie 2: Gdzie projektowane są torebki ARQEN?
+    </div>
+    <div class="faq-answer">
+      Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Pytanie 3: Jaki jest czas realizacji zamówienia?
+    </div>
+    <div class="faq-answer">
+      Standardowy czas realizacji zamówienia wynosi od 2 do 5 dni roboczych.
+      Do czasu realizacji należy doliczyć czas dostawy wybrany podczas składania zamówienia.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Pytanie 4: Czy mogę zwrócić lub wymienić zamówienie?
+    </div>
+    <div class="faq-answer">
+      Tak, istnieje możliwość zwrotu lub wymiany produktu w ciągu 14 dni od otrzymania zamówienia, pod warunkiem że produkt nie nosi śladów użytkowania.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Pytanie 5: Jak dbać o torebkę ARQEN?
+    </div>
+    <div class="faq-answer">
+      Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu, unikanie kontaktu z wilgocią oraz regularne czyszczenie miękką, suchą ściereczką.
+    </div>
+  </div>
+
+</div>
+<!-- FAQ END -->
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-}
-
-.kontener {
-    max-width: 700px;
-    margin: 50px auto;
+.faq-container {
+  max-width: 700px;
+  margin: 40px auto;
 }
 
 .faq-item {
-    background: #fff;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background: #fff;
 }
 
 .faq-question {
-    padding: 15px;
-    cursor: pointer;
-    font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .faq-answer {
-    padding: 0 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 300px;
-    padding: 15px;
+  max-height: 300px;
+  padding: 15px;
 }
 </style>
-</head>
-
-<body>
-
-<div class="kontener">
-
-    <div class="faq-item">
-        <div class="faq-question">
-            Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?
-        </div>
-        <div class="faq-answer">
-            Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question">
-            Pytanie 2: Gdzie projektowane są torebki ARQEN?
-        </div>
-        <div class="faq-answer">
-            Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question">
-            Pytanie 3: Jaki jest czas realizacji zamówienia?
-        </div>
-        <div class="faq-answer">
-            Standardowy czas realizacji zamówienia wynosi od 2 do 5 dni roboczych. Do czasu realizacji należy doliczyć czas dostawy wybrany podczas składania zamówienia.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question">
-            Pytanie 4: Czy mogę zwrócić lub wymienić zamówienie?
-        </div>
-        <div class="faq-answer">
-            Tak, istnieje możliwość zwrotu lub wymiany produktu w ciągu 14 dni od otrzymania zamówienia, pod warunkiem że produkt nie nosi śladów użytkowania.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question">
-            Pytanie 5: Jak dbać o torebkę ARQEN?
-        </div>
-        <div class="faq-answer">
-            Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu, unikanie kontaktu z wilgocią oraz regularne czyszczenie miękką, suchą ściereczką.
-        </div>
-    </div>
-
-</div>
 
 <script>
-document.querySelectorAll(".faq-question").forEach(question => {
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".faq-question").forEach(question => {
     question.addEventListener("click", () => {
-        const item = question.parentElement;
-        item.classList.toggle("active");
+      question.parentElement.classList.toggle("active");
     });
+  });
 });
 </script>
-
-</body>
-</html>
