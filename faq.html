@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<title>FAQ – ARQEN</title>
-<link rel="stylesheet" href="styl.css">
+    <meta charset="UTF-8">
+    <title>FAQ – ARQEN</title>
+    <link rel="stylesheet" href="styl.css">
 </head>
 <body>
 
@@ -13,10 +13,10 @@
 </header>
 
 <div class="kontener">
+
     <h2>Sugerowane pytania</h2>
 
-    <!-- PRZYCISKI FAQ -->
-    <div style="margin-bottom:30px;">
+    <div style="margin-bottom: 30px;">
         <button class="faq-btn" data-id="1">PYTANIE 1</button>
         <button class="faq-btn" data-id="2">PYTANIE 2</button>
         <button class="faq-btn" data-id="3">PYTANIE 3</button>
@@ -26,8 +26,8 @@
         <button class="faq-btn" data-id="5">PYTANIE 5</button>
     </div>
 
-    <!-- ODPOWIEDŹ FAQ -->
-    <div id="faq-box" style="overflow:hidden; max-height:0; transition:max-height 0.4s ease; margin-top:20px; border:1px solid #ccc; padding:0 15px; background:#fff;">
+    <!-- ODPOWIEDZI FAQ -->
+    <div id="faq-box" class="faq-box">
         <h3 id="faq-question"></h3>
         <p id="faq-answer"></p>
     </div>
@@ -37,9 +37,10 @@
     <!-- TEMAT 1 -->
     <div class="section">
         <div class="section-header">TEMAT 1 – Produkty <span>&#10148;</span></div>
-        <div class="section-content" style="overflow:hidden; max-height:0; transition:max-height 0.4s ease; padding:0 15px;">
+        <div class="section-content">
             <p><strong>Jakie modele są dostępne?</strong><br>
             Oferta ARQEN obejmuje klasyczne modele torebek zaprojektowane z myślą o codziennym użytkowaniu oraz wyjątkowych okazjach.</p>
+
             <p><strong>Czy produkty różnią się kolorystyką?</strong><br>
             Wybrane modele dostępne są w różnych wariantach kolorystycznych, zgodnych z estetyką marki.</p>
         </div>
@@ -48,71 +49,72 @@
     <!-- TEMAT 2 -->
     <div class="section">
         <div class="section-header">TEMAT 2 – Zamówienia i dostawa <span>&#10148;</span></div>
-        <div class="section-content" style="overflow:hidden; max-height:0; transition:max-height 0.4s ease; padding:0 15px;">
+        <div class="section-content">
             <p><strong>Jak długo trwa realizacja zamówienia?</strong><br>
             Czas realizacji zamówienia wynosi od 2 do 5 dni roboczych.</p>
+
             <p><strong>Jakie są metody dostawy?</strong><br>
-            Dostawa realizowana jest za pośrednictwem firm kurierskich. Szczegóły dostępne są na etapie składania zamówienia.</p>
+            Dostawa realizowana jest za pośrednictwem firm kurierskich.</p>
         </div>
     </div>
 
     <!-- TEMAT 3 -->
     <div class="section">
         <div class="section-header">TEMAT 3 – Zwroty i reklamacje <span>&#10148;</span></div>
-        <div class="section-content" style="overflow:hidden; max-height:0; transition:max-height 0.4s ease; padding:0 15px;">
+        <div class="section-content">
             <p><strong>Jak dokonać zwrotu?</strong><br>
             Aby dokonać zwrotu, należy skontaktować się z obsługą klienta i postępować zgodnie z instrukcjami.</p>
+
             <p><strong>Czy mogę zgłosić reklamację?</strong><br>
-            Tak, w przypadku wady produktu istnieje możliwość złożenia reklamacji zgodnie z obowiązującymi zasadami.</p>
+            Tak, istnieje możliwość złożenia reklamacji zgodnie z zasadami.</p>
         </div>
     </div>
 
 </div>
 
 <script>
-// DANE FAQ
-const faqData = {
-    1: {q:"Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?", a:"Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design."},
-    2: {q:"Pytanie 2: Gdzie projektowane są torebki ARQEN?", a:"Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność."},
-    3: {q:"Pytanie 3: Jaki jest czas realizacji zamówienia?", a:"Standardowy czas realizacji zamówienia wynosi od 2 do 5 dni roboczych. Do czasu realizacji należy doliczyć czas dostawy wybrany podczas składania zamówienia."},
-    4: {q:"Pytanie 4: Czy mogę zwrócić lub wymienić zamówienie?", a:"Tak, istnieje możliwość zwrotu lub wymiany produktu w ciągu 14 dni od otrzymania zamówienia, pod warunkiem że produkt nie nosi śladów użytkowania."},
-    5: {q:"Pytanie 5: Jak dbać o torebkę ARQEN?", a:"Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu, unikanie kontaktu z wilgocią oraz regularne czyszczenie miękką, suchą ściereczką."}
-};
+document.addEventListener("DOMContentLoaded", function () {
 
-// FAQ klikalne
-const buttons = document.querySelectorAll(".faq-btn");
-const box = document.getElementById("faq-box");
-const question = document.getElementById("faq-question");
-const answer = document.getElementById("faq-answer");
-let activeId = null;
+    const faqData = {
+        1: {q:"Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?", a:"Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania."},
+        2: {q:"Pytanie 2: Gdzie projektowane są torebki ARQEN?", a:"Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie."},
+        3: {q:"Pytanie 3: Jaki jest czas realizacji zamówienia?", a:"Standardowy czas realizacji zamówienia wynosi od 2 do 5 dni roboczych. Do czasu realizacji należy doliczyć czas dostawy."},
+        4: {q:"Pytanie 4: Czy mogę zwrócić lub wymienić zamówienie?", a:"Tak, istnieje możliwość zwrotu lub wymiany produktu w ciągu 14 dni od otrzymania zamówienia."},
+        5: {q:"Pytanie 5: Jak dbać o torebkę ARQEN?", a:"Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu oraz regularne czyszczenie miękką, suchą ściereczką."}
+    };
 
-buttons.forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-        const id = btn.dataset.id;
-        if(activeId===id){
-            box.style.maxHeight="0";
-            activeId=null;
-        } else {
-            question.textContent = faqData[id].q;
-            answer.textContent = faqData[id].a;
-            box.style.maxHeight = "400px";
-            activeId=id;
-        }
+    const buttons = document.querySelectorAll(".faq-btn");
+    const box = document.getElementById("faq-box");
+    const question = document.getElementById("faq-question");
+    const answer = document.getElementById("faq-answer");
+    let activeId = null;
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const id = btn.dataset.id;
+            if (activeId === id) {
+                box.style.maxHeight = "0";
+                activeId = null;
+            } else {
+                question.textContent = faqData[id].q;
+                answer.textContent = faqData[id].a;
+                box.style.maxHeight = "300px";
+                activeId = id;
+            }
+        });
     });
-});
 
-// TEMATY rozwijane
-document.querySelectorAll(".section-header").forEach(header=>{
-    header.addEventListener("click", ()=>{
-        const section = header.parentElement;
-        const content = section.querySelector(".section-content");
-        section.classList.toggle("active");
-        if(section.classList.contains("active")){
-            content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-            content.style.maxHeight = "0";
-        }
+    document.querySelectorAll(".section-header").forEach(header => {
+        header.addEventListener("click", () => {
+            const content = header.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
     });
+
 });
 </script>
 
