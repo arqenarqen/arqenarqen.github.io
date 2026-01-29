@@ -4,6 +4,62 @@
     <meta charset="UTF-8">
     <title>FAQ – ARQEN</title>
     <link rel="stylesheet" href="styl.css">
+    <style>
+        /* Wyśrodkowanie przycisków FAQ */
+        .faq-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .faq-btn {
+            cursor: pointer;
+        }
+
+        /* Kontener odpowiedzi FAQ */
+        .faq-box {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            text-align: left;
+            margin: 0 auto 40px;
+            max-width: 600px;
+        }
+
+        /* TEMATY rozwijane */
+        .section {
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        .section-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: inherit; /* dziedziczy tło strony */
+        }
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 15px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .section-header span {
+            transition: transform 0.3s ease;
+        }
+        .section-header.active span {
+            transform: rotate(90deg);
+        }
+    </style>
 </head>
 <body>
 
@@ -14,7 +70,7 @@
 
 <div class="kontener">
 
-    <h2>Sugerowane pytania</h2>
+    <h2 style="text-align: center;">Sugerowane pytania</h2>
 
     <div class="faq-buttons">
         <button class="faq-btn" data-id="1">PYTANIE 1</button>
@@ -24,14 +80,14 @@
         <button class="faq-btn" data-id="5">PYTANIE 5</button>
     </div>
 
-    <!-- Kontener odpowiedzi FAQ -->
     <div id="faq-box" class="faq-box">
         <h3 id="faq-question"></h3>
         <p id="faq-answer"></p>
     </div>
 
-    <h3>TEMATY</h3>
+    <h3 style="text-align: center; margin-bottom: 20px;">TEMATY</h3>
 
+    <!-- TEMATY -->
     <div class="section">
         <div class="section-header">TEMAT 1 – Produkty <span>&#10148;</span></div>
         <div class="section-content">
@@ -103,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".section-header").forEach(header => {
         header.addEventListener("click", () => {
             const content = header.nextElementSibling;
+            header.classList.toggle("active");
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
             } else {
