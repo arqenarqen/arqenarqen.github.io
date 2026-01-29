@@ -4,127 +4,40 @@
     <meta charset="UTF-8">
     <title>FAQ</title>
     <link rel="stylesheet" href="styl.css">
-
-    <style>
-        /* tylko pole odpowiedzi – reszta wyglądu zostaje */
-        #faq-box {
-            max-width: 600px;
-            margin: 40px auto 0;
-            background: #fff;
-            border: 1px solid #ccc;
-            padding: 0 20px;
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-            text-align: left;
-        }
-
-        #faq-box.active {
-            max-height: 500px;
-            padding: 20px;
-        }
-    </style>
 </head>
-
 <body>
 
-<header>
-    <a href="index.html" class="powrot">&#11013;</a>
-    <img src="logo.jpg" class="logo" style="filter: invert(1);">
-</header>
+    <header>
+        <a href="index.html" class="powrot">&#11013;</a>
+        <img src="logo.jpg" class="logo" style="filter: invert(1);">
+    </header>
 
-<div class="kontener" style="margin-top: 40px; text-align: center;">
-
-    <h2 style="font-style: italic; font-size: 40px; text-transform: none;">
-        Sugerowane pytania
-    </h2>
-
-    <div style="margin-bottom: 30px;">
-        <button class="faq-btn" data-id="1">PYTANIE 1</button>
-        <button class="faq-btn" data-id="2">PYTANIE 2</button>
-        <button class="faq-btn" data-id="3">PYTANIE 3</button>
-    </div>
-
-    <div>
-        <button class="faq-btn" data-id="4">PYTANIE 4</button>
-        <button class="faq-btn" data-id="5">PYTANIE 5</button>
-    </div>
-
-    <!-- MIEJSCE NA ODPOWIEDŹ -->
-    <div id="faq-box">
-        <h3 id="faq-question"></h3>
-        <p id="faq-answer"></p>
-    </div>
-
-    <div style="max-width: 600px; margin: 60px auto 0; text-align: left;">
-        <h3>TEMATY</h3>
-
-        <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
-            TEMAT 1 <span>&#10148;</span>
+    <div class="kontener" style="margin-top: 40px; text-align: center;">
+        <h2 style="font-style: italic; font-size: 40px; text-transform: none;">Sugerowane pytania</h2>
+        
+        <div style="margin-bottom: 30px;">
+            <button class="faq-btn">PYTANIE 1</button>
+            <button class="faq-btn">PYTANIE 2</button>
+            <button class="faq-btn">PYTANIE 3</button>
+        </div>
+        <div>
+             <button class="faq-btn">PYTANIE 4</button>
+             <button class="faq-btn">PYTANIE 5</button>
         </div>
 
-        <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
-            TEMAT 2 <span>&#10148;</span>
-        </div>
-
-        <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
-            TEMAT 3 <span>&#10148;</span>
+        <div style="max-width: 600px; margin: 60px auto 0; text-align: left;">
+            <h3>TEMATY</h3>
+            <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
+                TEMAT 1 <span>&#10148;</span>
+            </div>
+            <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
+                TEMAT 2 <span>&#10148;</span>
+            </div>
+            <div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; background: #fff; display: flex; justify-content: space-between;">
+                TEMAT 3 <span>&#10148;</span>
+            </div>
         </div>
     </div>
-
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const faqData = {
-        1: {
-            q: "Pytanie 1: Z jakich materiałów wykonane są torebki ARQEN?",
-            a: "Torebki ARQEN wykonane są z wysokiej jakości materiałów, starannie dobranych pod kątem estetyki, trwałości oraz komfortu użytkowania. Każdy model projektowany jest z dbałością o detale i ponadczasowy design."
-        },
-        2: {
-            q: "Pytanie 2: Gdzie projektowane są torebki ARQEN?",
-            a: "Marka ARQEN powstała z myślą o nowoczesnej elegancji inspirowanej europejskim stylem. Projekty tworzone są w Europie, z naciskiem na minimalistyczną formę i funkcjonalność."
-        },
-        3: {
-            q: "Pytanie 3: Jaki jest czas realizacji zamówienia?",
-            a: "Standardowy czas realizacji zamówienia wynosi od 2 do 5 dni roboczych. Do czasu realizacji należy doliczyć czas dostawy wybrany podczas składania zamówienia."
-        },
-        4: {
-            q: "Pytanie 4: Czy mogę zwrócić lub wymienić zamówienie?",
-            a: "Tak, istnieje możliwość zwrotu lub wymiany produktu w ciągu 14 dni od otrzymania zamówienia, pod warunkiem że produkt nie nosi śladów użytkowania."
-        },
-        5: {
-            q: "Pytanie 5: Jak dbać o torebkę ARQEN?",
-            a: "Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu, unikanie kontaktu z wilgocią oraz regularne czyszczenie miękką, suchą ściereczką."
-        }
-    };
-
-    const buttons = document.querySelectorAll(".faq-btn");
-    const box = document.getElementById("faq-box");
-    const question = document.getElementById("faq-question");
-    const answer = document.getElementById("faq-answer");
-
-    let activeId = null;
-
-    buttons.forEach(btn => {
-        btn.addEventListener("click", function () {
-            const id = this.dataset.id;
-
-            if (activeId === id) {
-                box.classList.remove("active");
-                activeId = null;
-            } else {
-                question.textContent = faqData[id].q;
-                answer.textContent = faqData[id].a;
-                box.classList.add("active");
-                activeId = id;
-            }
-        });
-    });
-
-});
-</script>
 
 </body>
 </html>
