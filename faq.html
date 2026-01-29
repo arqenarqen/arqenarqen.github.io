@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="styl.css">
 
 <style>
-/* zachowujemy wygląd reszty strony */
+/* BODY */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@ body {
     color: #111;
 }
 
-/* HEADER: logo po lewej, przycisk powrotu po prawej */
+/* HEADER: logo po lewej, powrotu po prawej */
 header {
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,6 @@ header {
 
 header .logo {
     height: 50px;
-    /* pozostawiamy filter taki jak w stylu oryginalnym */
     filter: invert(1);
 }
 
@@ -222,6 +221,7 @@ const faqData = {
     5: {q:"Pytanie 5: Jak dbać o torebkę ARQEN?", a:"Aby zachować idealny wygląd torebki, zaleca się przechowywanie jej w suchym miejscu, unikanie kontaktu z wilgocią oraz regularne czyszczenie miękką, suchą ściereczką."}
 };
 
+// FAQ klikalne
 const buttons = document.querySelectorAll(".faq-btn");
 const box = document.getElementById("faq-box");
 const question = document.getElementById("faq-question");
