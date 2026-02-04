@@ -3,39 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <title>Kontakt</title>
-    <link rel="stylesheet" href="styl.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: relative;
+            height: 80px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .powrot {
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            z-index: 2;
+        }
+
+        .logo {
+            height: 50px;
+            z-index: 2;
+        }
+
+        .header-nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 25px;
+            z-index: 1;
+        }
+
+        .header-nav a {
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            white-space: nowrap;
+        }
+
+        /* ===== KONTAKT ===== */
+        .kontener {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .flex-kontakt {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .wiersz {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .ikona {
+            width: 30px;
+            font-size: 22px;
+        }
+
+        /* ===== STOPKA ===== */
+        .stopka {
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+            }
+
+            .flex-kontakt {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <header class="header">
 
-    <!-- LEWA STRONA -->
-    <div class="header-left">
-        <a href="index.html" class="powrot">⬅ Powrót</a>
-    </div>
+    <a href="index.html" class="powrot">⬅ Powrót</a>
 
-    <!-- ŚRODEK -->
-    <nav class="header-center">
-        <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0" target="_blank">
-            📝 BLOG
-        </a>
-        <a href="https://www.instagram.com/arqen_bags/" target="_blank">
-            📸 ARQEN_bags
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61586821064808" target="_blank">
-            👍 ARQEN
-        </a>
+    <nav class="header-nav">
+        <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0" target="_blank">📝 BLOG</a>
+        <a href="https://www.instagram.com/arqen_bags/" target="_blank">📸 ARQEN_bags</a>
+        <a href="https://www.facebook.com/profile.php?id=61586821064808" target="_blank">👍 ARQEN</a>
     </nav>
 
-    <!-- PRAWA STRONA -->
-    <div class="header-right">
-        <img src="logo.jpg" class="logo">
-    </div>
+    <img src="logo.jpg" alt="Logo ARQEN" class="logo">
 
 </header>
 
 <div class="kontener flex-kontakt">
-    <div style="text-align: left;">
+
+    <div>
         <h1 style="font-size: 60px; line-height: 1;">
             Kontakt<br>dane<br>firmy
         </h1>
@@ -43,26 +119,18 @@
 
     <div>
         <div class="wiersz">
-            <div class="ikona">&#9990;</div>
-            <span>123 456 789 | GODZINY PRACY: Poniedziałek – Piątek, 9:00–17:00</span>
+            <div class="ikona">📞</div>
+            <span>123 456 789 | Pon.–Pt. 9:00–17:00</span>
         </div>
 
         <div class="wiersz">
             <div class="ikona">📸</div>
-            <span>
-                <a href="https://www.instagram.com/arqen_bags/" target="_blank">
-                    ARQEN_bags
-                </a>
-            </span>
+            <a href="https://www.instagram.com/arqen_bags/" target="_blank">ARQEN_bags</a>
         </div>
 
         <div class="wiersz">
             <div class="ikona">👍</div>
-            <span>
-                <a href="https://www.facebook.com/profile.php?id=61586821064808" target="_blank">
-                    ARQEN
-                </a>
-            </span>
+            <a href="https://www.facebook.com/profile.php?id=61586821064808" target="_blank">ARQEN</a>
         </div>
 
         <div class="wiersz">
@@ -70,9 +138,10 @@
             <span>kontakt.arqen@gmail.com</span>
         </div>
     </div>
+
 </div>
 
-<div class="kontener" style="margin-top: 60px; text-align: center;">
+<div class="kontener" style="text-align:center;">
     <p style="font-size: 20px;">
         Poznaj markę bliżej →
         <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0" target="_blank">
