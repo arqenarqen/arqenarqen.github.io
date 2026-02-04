@@ -1,103 +1,88 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Kontakt</title>
-    <link rel="stylesheet" href="styl.css">
+    <meta charset="UTF-8">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="styl.css">
 </head>
 <body>
 
-<header style="background: transparent; height: 80px; position: relative; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+<header class="header">
 
-    <!-- POWRÓT PO LEWEJ -->
-    <a href="index.html"
-       class="powrot"
-       style="color: black; text-decoration: none; font-weight: bold;">
-        &#11013; Powrót
-    </a>
+    <!-- LEWA STRONA -->
+    <div class="header-left">
+        <a href="index.html" class="powrot">⬅ Powrót</a>
+    </div>
 
-    <!-- NAV ŚRODEK -->
-    <nav style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 25px;">
-        <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0"
-           target="_blank"
-           style="color: black; text-decoration: none; font-weight: bold;">
-           📝 BLOG
-        </a>
+    <!-- ŚRODEK -->
+    <nav class="header-center">
+        <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0" target="_blank">
+            📝 BLOG
+        </a>
+        <a href="https://www.instagram.com/arqen_bags/" target="_blank">
+            📸 ARQEN_bags
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61586821064808" target="_blank">
+            👍 ARQEN
+        </a>
+    </nav>
 
-        <a href="https://www.instagram.com/arqen_bags/"
-           target="_blank"
-           style="color: black; text-decoration: none; font-weight: bold;">
-           📸 ARQEN_bags
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61586821064808"
-           target="_blank"
-           style="color: black; text-decoration: none; font-weight: bold;">
-           👍 ARQEN
-        </a>
-    </nav>
-
-    <!-- LOGO PO PRAWEJ -->
-    <img src="logo.jpg" class="logo" style="height: 50px;">
+    <!-- PRAWA STRONA -->
+    <div class="header-right">
+        <img src="logo.jpg" class="logo">
+    </div>
 
 </header>
 
 <div class="kontener flex-kontakt">
-    <div style="text-align: left;">
-        <h1 style="font-size: 60px; line-height: 1;">
-            Kontakt<br>dane<br>firmy
-        </h1>
-    </div>
-    
-    <div>
-        <div class="wiersz">
-            <div class="ikona">&#9990;</div>
-            <span>123 456 789 | GODZINY PRACY: Poniedziałek – Piątek, 9:00–17:00</span>
-        </div>
+    <div style="text-align: left;">
+        <h1 style="font-size: 60px; line-height: 1;">
+            Kontakt<br>dane<br>firmy
+        </h1>
+    </div>
 
-        <div class="wiersz">
-            <div class="ikona">📸</div>
-            <span>
-                <a href="https://www.instagram.com/arqen_bags/"
-                   target="_blank"
-                   style="color: black; text-decoration: underline;">
-                    ARQEN_bags
-                </a>
-            </span>
-        </div>
+    <div>
+        <div class="wiersz">
+            <div class="ikona">&#9990;</div>
+            <span>123 456 789 | GODZINY PRACY: Poniedziałek – Piątek, 9:00–17:00</span>
+        </div>
 
-        <div class="wiersz">
-            <div class="ikona">👍</div>
-            <span>
-                <a href="https://www.facebook.com/profile.php?id=61586821064808"
-                   target="_blank"
-                   style="color: black; text-decoration: underline;">
-                    ARQEN
-                </a>
-            </span>
-        </div>
+        <div class="wiersz">
+            <div class="ikona">📸</div>
+            <span>
+                <a href="https://www.instagram.com/arqen_bags/" target="_blank">
+                    ARQEN_bags
+                </a>
+            </span>
+        </div>
 
-        <div class="wiersz">
-            <div class="ikona">@</div>
-            <span>kontakt.arqen@gmail.com</span>
-        </div>
-    </div>
+        <div class="wiersz">
+            <div class="ikona">👍</div>
+            <span>
+                <a href="https://www.facebook.com/profile.php?id=61586821064808" target="_blank">
+                    ARQEN
+                </a>
+            </span>
+        </div>
+
+        <div class="wiersz">
+            <div class="ikona">@</div>
+            <span>kontakt.arqen@gmail.com</span>
+        </div>
+    </div>
 </div>
 
-<!-- LINK DO BLOGA -->
 <div class="kontener" style="margin-top: 60px; text-align: center;">
-    <p style="font-size: 20px;">
-        Poznaj markę bliżej →
-        <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0"
-           target="_blank"
-           style="font-weight: bold; color: black; text-decoration: underline;">
-            BLOG ARQEN
-        </a>
-    </p>
+    <p style="font-size: 20px;">
+        Poznaj markę bliżej →
+        <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0" target="_blank">
+            BLOG ARQEN
+        </a>
+    </p>
 </div>
 
 <div class="stopka">
-    PROJEKT STUDENCKI | informacja o ochronie danych
+    PROJEKT STUDENCKI | informacja o ochronie danych
 </div>
 
 </body>
