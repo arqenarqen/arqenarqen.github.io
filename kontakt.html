@@ -1,119 +1,49 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<title>Kontakt</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f6efe6;
-}
-
-/* ===== HEADER ===== */
-header {
-    height: 80px;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-}
-
-header a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    white-space: nowrap;
-}
-
-.nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.logo {
-    height: 45px;
-}
-
-/* ===== CONTENT ===== */
-.kontener {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 20px;
-}
-
-.flex-kontakt {
-    display: flex;
-    gap: 60px;
-}
-
-.wiersz {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.stopka {
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.6;
-    margin: 60px 0 30px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .flex-kontakt {
-        flex-direction: column;
-    }
-
-    .nav {
-        font-size: 14px;
-        gap: 15px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="styl.css">
 </head>
-
 <body>
 
-<header>
-    <!-- LEWA: TYLKO POWRÓT -->
-    <a href="index.html">⬅ Powrót</a>
+    <header style="background: transparent;">
+        <a href="index.html" class="powrot" style="color: black;">&#11013; Powrót</a>
+        <img src="logo.jpg" class="logo">
+    </header>
 
-    <!-- ŚRODEK: JEDYNY NAV -->
-    <nav class="nav">
-        <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0" target="_blank">📝 BLOG</a>
-        <a href="https://www.instagram.com/arqen_bags/" target="_blank">📸 ARQEN_bags</a>
-        <a href="https://www.facebook.com/profile.php?id=61586821064808" target="_blank">👍 ARQEN</a>
-    </nav>
-
-    <!-- PRAWA: LOGO -->
-    <img src="logo.jpg" alt="ARQEN" class="logo">
-</header>
-
-<div class="kontener flex-kontakt">
-    <h1 style="font-size:60px; line-height:1;">
-        KONTAKT<br>DANE<br>FIRMY
-    </h1>
-
-    <div>
-        <div class="wiersz">📞 123 456 789 | Pon.–Pt. 9:00–17:00</div>
-        <div class="wiersz">📸 ARQEN_bags</div>
-        <div class="wiersz">👍 ARQEN</div>
-        <div class="wiersz">@ kontakt.arqen@gmail.com</div>
-    </div>
-</div>
-
-<div class="kontener" style="text-align:center;">
-    Poznaj markę bliżej → <strong>BLOG ARQEN</strong>
-</div>
-
-<div class="stopka">
-    PROJEKT STUDENCKI | informacja o ochronie danych
-</div>
+    <div class="kontener flex-kontakt">
+        <div style="text-align: left;">
+            <h1 style="font-size: 60px; line-height: 1;">Kontakt<br>dane<br>firmy</h1>
+        </div>
+        
+        <div>
+            <div class="wiersz">
+                <div class="ikona">&#9990;</div>
+                <span>123 456 789 | GODZINY PRACY: Poniedziałek - Piątek, 9:00-17:00</span>
+            </div>
+            <div class="wiersz">
+                <div class="ikona">IG</div>
+                <span>arqen_bags | </span>
+            </div>
+            <div class="wiersz">
+                <div class="ikona">FB</div>
+                <span>ARQEN | </span>
+            </div>
+            <div class="wiersz">
+                <div class="ikona">@</div>
+                <span>kontakt.arqen@gmail.com</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stopka">
+       PROJEKT STUDENCKI | informacja o ochronie danych
+    </div>
 
 </body>
+
 </html>
+
+
+
