@@ -7,32 +7,17 @@
 </head>
 <body>
 
-<header style="background: transparent; height: 80px; position: relative;">
+<header style="background: transparent; height: 80px; position: relative; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
 
-    <!-- POWRÓT -->
+    <!-- POWRÓT PO LEWEJ -->
     <a href="index.html"
        class="powrot"
-       style="
-           position: absolute;
-           left: 20px;
-           top: 50%;
-           transform: translateY(-50%);
-           color: black;
-           display: inline-block;
-           width: auto;
-       ">
+       style="color: black; text-decoration: none; font-weight: bold;">
         &#11013; Powrót
     </a>
 
-    <!-- LINKI NA ŚRODKU -->
-    <nav style="
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        gap: 25px;
-    ">
+    <!-- NAV ŚRODEK -->
+    <nav style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 25px;">
         <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0"
            target="_blank"
            style="color: black; text-decoration: none; font-weight: bold;">
@@ -52,15 +37,8 @@
         </a>
     </nav>
 
-    <!-- LOGO -->
-    <img src="logo.jpg"
-         class="logo"
-         style="
-             position: absolute;
-             right: 20px;
-             top: 50%;
-             transform: translateY(-50%);
-         ">
+    <!-- LOGO PO PRAWEJ -->
+    <img src="logo.jpg" class="logo" style="height: 50px;">
 
 </header>
 
@@ -106,6 +84,7 @@
     </div>
 </div>
 
+<!-- LINK DO BLOGA -->
 <div class="kontener" style="margin-top: 60px; text-align: center;">
     <p style="font-size: 20px;">
         Poznaj markę bliżej →
