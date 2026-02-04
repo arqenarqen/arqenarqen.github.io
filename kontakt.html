@@ -8,50 +8,57 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background: #f6efe6;
         }
 
         /* ===== HEADER ===== */
         .header {
             position: relative;
             height: 80px;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            background: black;
         }
 
         .powrot {
-            font-weight: bold;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
             text-decoration: none;
-            color: black;
-            z-index: 2;
-        }
-
-        .logo {
-            height: 50px;
-            z-index: 2;
+            font-weight: bold;
+            z-index: 3;
         }
 
         .header-nav {
             position: absolute;
             left: 50%;
-            transform: translateX(-50%);
+            top: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
             gap: 25px;
-            z-index: 1;
+            z-index: 2;
         }
 
         .header-nav a {
-            font-weight: bold;
+            color: white;
             text-decoration: none;
-            color: black;
+            font-weight: bold;
             white-space: nowrap;
+        }
+
+        .logo {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 45px;
+            z-index: 3;
         }
 
         /* ===== KONTAKT ===== */
         .kontener {
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 80px auto;
             padding: 0 20px;
         }
 
@@ -64,19 +71,19 @@
         .wiersz {
             display: flex;
             align-items: center;
+            gap: 15px;
             margin-bottom: 20px;
             font-size: 18px;
         }
 
         .ikona {
             width: 30px;
-            font-size: 22px;
+            text-align: center;
         }
 
-        /* ===== STOPKA ===== */
         .stopka {
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px;
             font-size: 14px;
             opacity: 0.6;
         }
@@ -105,15 +112,15 @@
         <a href="https://www.facebook.com/profile.php?id=61586821064808" target="_blank">👍 ARQEN</a>
     </nav>
 
-    <img src="logo.jpg" alt="Logo ARQEN" class="logo">
+    <img src="logo.jpg" alt="ARQEN" class="logo">
 
 </header>
 
 <div class="kontener flex-kontakt">
 
     <div>
-        <h1 style="font-size: 60px; line-height: 1;">
-            Kontakt<br>dane<br>firmy
+        <h1 style="font-size:60px; line-height:1;">
+            KONTAKT<br>DANE<br>FIRMY
         </h1>
     </div>
 
@@ -142,7 +149,7 @@
 </div>
 
 <div class="kontener" style="text-align:center;">
-    <p style="font-size: 20px;">
+    <p style="font-size:20px;">
         Poznaj markę bliżej →
         <a href="https://sites.google.com/view/blogarqen/strona-główna?authuser=0" target="_blank">
             BLOG ARQEN
